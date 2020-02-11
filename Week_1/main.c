@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "function.h"
 
+//Asignment 6A
 int main(){
     int x, y;
     printf("\nEnter 2 numbers: ");
