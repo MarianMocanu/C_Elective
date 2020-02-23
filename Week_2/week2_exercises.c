@@ -1,5 +1,5 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 // int main(){
 //     int x = 10;
@@ -16,7 +16,7 @@
 // }
 
 //Asignment 9
-// void swap(int *a, int *b); 
+// void swap(int *a, int *b);
 
 // int main()
 // {
@@ -38,9 +38,9 @@
 //            {
 //                swap(&array[j], &array[j+1]);
 //            }
-           
+
 //        }
-       
+
 //     }
 //     printf("Array after sort: \n\n");
 //     for (int i = 0; i < 5; i++)
@@ -90,7 +90,7 @@
 //         {
 //             *(pointers[i] + j) = i*10 + j;
 //         }
-        
+
 //     }
 
 //     for (int i = 0; i < 10; i++)
@@ -105,25 +105,26 @@
 // }
 
 //Asignment 12
-int * increasePointer(int *pointer, int *pointers[]);
+int *increasePointer(int *pointer, int *pointers[]);
 
-int main(){
+int main()
+{
     int array[100];
     int *pointers[10];
 
     for (int i = 0; i < 10; i++)
     {
-        pointers[i] = &array[i*10];
+        pointers[i] = &array[i * 10];
         for (int j = 0; j < 10; j++)
         {
-            *(pointers[i] + j) = i*10 + j;
+            *(pointers[i] + j) = i * 10 + j;
             // printf("Address: %d \n", pointers[i] + j);
         }
     }
 
     int *circularPointer = NULL;
     circularPointer = pointers[9];
-    
+
     printf("Value of cicularPointer is %d\n", *circularPointer);
     printf("Address of circularPointer is %d\n\n", circularPointer);
     printf("Value of cicularPointer +1 is %d\n", *increasePointer(circularPointer, pointers));
@@ -135,9 +136,10 @@ int main(){
     return 0;
 }
 
-int * increasePointer(int *pointer, int *pointers[]){
+int *increasePointer(int *pointer, int *pointers[])
+{
     pointer++;
-    if (pointer > pointers[sizeof(pointers)/sizeof(int)])
+    if (pointer > pointers[sizeof(pointers) / sizeof(int)])
     {
         return pointers[0];
     }
